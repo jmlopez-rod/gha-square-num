@@ -1,4 +1,4 @@
-name: squre-number
+name: square-number
 description: takes in an input number and returns its square
 inputs:
   num:
@@ -16,4 +16,4 @@ runs:
       shell: bash
       env:
         INPUT_NUM: inputs.num
-      run: PYTHONPATH="$GITHUB_ACTION_PATH/src" python -m get_num_square
+      run: PYTHONPATH="$GITHUB_ACTION_PATH/src" python -m square_number
