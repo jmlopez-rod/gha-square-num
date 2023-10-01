@@ -1,0 +1,19 @@
+name: squre-number
+description: takes in an input number and returns its square
+inputs:
+  num:
+    description: the number to square
+    required: true
+outputs:
+  num-squared:
+    description: the input squared
+    value: ${{ steps.get-square.outputs.num-squared }}
+
+runs:
+  using: "composite"
+  steps:
+    - id: get-square
+      shell: bash
+      env:
+        INPUT_NUM: inputs.num
+      run: PYTHONPATH="$GITHUB_ACTION_PATH/src" python -m get_num_square
