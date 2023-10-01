@@ -5,7 +5,7 @@ def append_to_output(var_name: str, var_value: str) -> None:
         f.write(f'{var_name}={var_value}\n')
 
 def main() -> None:
-    num = os.environ.get('INPUT_NUM')
+    num = int(os.environ.get('INPUT_NUM'))
     result = num * num
     append_to_output('num-square', str(result))
 
