@@ -15,5 +15,5 @@ runs:
     - id: get-square
       shell: bash
       env:
-        INPUT_NUM: inputs.num
+        INPUT_NUM: ${{ inputs.num }}
       run: PYTHONPATH="$GITHUB_ACTION_PATH/src" python -m square_number
