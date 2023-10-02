@@ -4,14 +4,6 @@ inputs:
   num:
     description: the number to square
     required: true
-  string-arg:
-    description: test-string
-    required: false
-    default: default-string
-  bool-arg:
-    description: test-bool
-    required: false
-    default: true
 outputs:
   num-squared:
     description: the input squared
@@ -24,7 +16,4 @@ runs:
       shell: bash
       env:
         INPUT_NUM: ${{ inputs.num }}
-        INPUT_NUM_JSON: ${{ toJSON(inputs.num) }}
-      run: |-
-        PYTHONPATH="$GITHUB_ACTION_PATH/src" python -m square_number
-        env
+      run: PYTHONPATH="$GITHUB_ACTION_PATH/src" python -m square_number
